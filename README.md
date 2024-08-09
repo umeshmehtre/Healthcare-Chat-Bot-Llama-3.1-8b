@@ -1,46 +1,86 @@
-# NvidiAI-Assistant-RAG-powered-Chatbot
+# NHS Care Bot - README
 
-NvidiAI Assistant is a Retrieval-Augmented Generation (RAG) powered chatbot that leverages NVIDIA AI Foundational models. This project implements a simple, standalone RAG pipeline with a Streamlit-based user interface.
+## Overview
+
+This repository contains the code for a healthcare chatbot named **NHS Care Bot**, developed specifically for UK NHS Hospitals. The bot is designed to provide users with information and support based on the official NHS data, with a strong focus on patient safety and accurate guidance. The chatbot uses state-of-the-art language models and vector databases to process and retrieve information.
 
 ## Features
 
-- Document upload functionality to build and expand the knowledge base
-- Vector database storage for efficient document retrieval
-- Integration with NVIDIA AI Foundational models for embedding and language processing
-- Interactive chat interface powered by a RAG pipeline
+1. **Document Loader**:
+   - Allows users to upload documents to a knowledge base.
+   - Automatically organizes and stores these documents for future processing.
 
-## Components
+2. **Embedding Model and Language Model**:
+   - Uses NVIDIA's AI models for text embedding and natural language understanding.
+   - Generates responses based on the context provided by the user and documents in the knowledge base.
 
-1. **Document Loader**: Allows users to upload documents to the knowledge base via a Streamlit UI.
-2. **Embedding Model and LLM**: Utilizes NVIDIA AI models for document embedding and language processing.
-3. **Vector Database Store**: Implements FAISS for efficient storage and retrieval of document embeddings.
-4. **LLM Response Generation and Chat**: Provides an interactive chat interface that generates responses based on the uploaded documents and user queries.
+3. **Vector Database Store**:
+   - Efficiently stores and retrieves information using a vector store (FAISS).
+   - Can utilize an existing vector store or create a new one from uploaded documents.
 
-## Prerequisites
+4. **LLM Response Generation and Chat**:
+   - Provides a user interface for interacting with the chatbot.
+   - Generates context-aware responses to user queries based on the knowledge base.
 
-- Python 3.7+
-- Streamlit
-- LangChain
-- FAISS
-- NVIDIA AI Playground API key
+## How to Use
 
-## Setup
+### 1. Set Up
 
-1. Clone this repository
-2. Install the required dependencies:
-   ```
-   pip install streamlit langchain faiss-cpu
-   ```
-3. Export your NVIDIA AI Playground API key:
-   ```
-   export NVIDIA_API_KEY='your_api_key_here'
-   ```
+- Ensure you have the required dependencies installed. You can install them using the following:
+  ```bash
+  pip install streamlit langchain_nvidia_ai_endpoints langchain_core
+  ```
 
-## Usage
+- Set your NVIDIA API key as an environment variable:
+  ```bash
+  export NVIDIA_API_KEY='your_api_key_here'
+  ```
 
-1. Run the Streamlit app:
-   ```
-   streamlit run app.py
-   ```
-2. Use the sidebar to upload documents to the knowledge base.
-3. Chat with the AI Assistant using the main interface.
+### 2. Run the Application
+
+- Start the Streamlit application:
+  ```bash
+  streamlit run app.py
+  ```
+
+- The application will launch in your browser, where you can interact with the chatbot.
+
+### 3. Uploading Documents
+
+- Navigate to the sidebar and upload documents that will form the basis of the knowledge base.
+- Uploaded files will be stored in the `uploaded_docs` directory.
+
+### 4. Using the Vector Store
+
+- You can choose to use an existing vector store or create a new one based on the uploaded documents.
+- If you choose to create a new store, the documents will be split into chunks and embedded for efficient retrieval.
+
+### 5. Chat Interface
+
+- Type your message in the chat input field.
+- The bot will respond based on the context derived from the uploaded documents.
+
+## Important Notes
+
+- **Disclaimer**: The chatbot is an AI assistant and should not be considered a substitute for professional medical advice. It provides information based on the context it has been given and the official NHS guidelines. Users are encouraged to consult healthcare professionals for personalized advice.
+
+## File Structure
+
+- `app.py`: The main application file.
+- `uploaded_docs/`: Directory where uploaded documents are stored.
+- `vectorstore.pkl`: Serialized vector store file for quick retrieval.
+
+## Dependencies
+
+- `Streamlit`: Used for building the web interface.
+- `Langchain`: Framework for working with language models and vector databases.
+- `FAISS`: Library for efficient similarity search and clustering of dense vectors.
+- `NVIDIA AI Models`: State-of-the-art models for text embedding and response generation.
+
+## License
+
+This project is licensed under the MIT License. Please see the `LICENSE` file for more details.
+
+---
+
+For any issues or contributions, please feel free to submit a pull request or open an issue on the repository.
