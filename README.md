@@ -1,8 +1,8 @@
-# NHS Care Bot - README
+# HealthCare Bot - README
 
 ## Overview
 
-This repository contains the code for a healthcare chatbot named **NHS Care Bot**, developed specifically for UK NHS Hospitals. The bot is designed to provide users with information and support based on the official NHS data, with a strong focus on patient safety and accurate guidance. The chatbot uses state-of-the-art language models and vector databases to process and retrieve information.
+This repository contains the code for a healthcare chatbot named **HealthCare Bot**, developed specifically for UK NHS Hospitals. The bot is designed to provide users with information and support based on the official HealthCare data, with a strong focus on patient safety and accurate guidance. The chatbot uses state-of-the-art language models and vector databases to process and retrieve information.
 
 ## Features
 
